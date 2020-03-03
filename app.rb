@@ -11,7 +11,15 @@ end
 get '/bigsecret' do
   'Neha in london'
 end
-get '/cat' do
+get '/random-cat' do
+  @name = ['Amigo', 'Oscar', ' Viking'].sample
   erb(:index)
 end
-@inst = ['Amigo', 'Oscar', ' Viking'].sample
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  erb(:index)
+end
+get '/cat-form' do
+  erb(:cat_form)
+end
